@@ -12,7 +12,7 @@ export default function EliteWomenStore() {
         <div className="text-[11px] tracking-widest cursor-pointer border border-black px-4 py-1 hover:bg-black hover:text-white transition-all">السلة (0)</div>
       </nav>
 
-      {/* القسم الرئيسي - تم وضع فيديو يجمع (ملابس، إكسسوارات، عناية) */}
+      {/* القسم الرئيسي - فيديو يجمع الملابس والاكسسوارات والجمال */}
       <header className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-black">
         <div className="absolute inset-0 z-0">
           <video 
@@ -23,20 +23,20 @@ export default function EliteWomenStore() {
             className="w-full h-full object-cover opacity-80"
           >
             <source 
-              src="https://assets.mixkit.co/videos/preview/mixkit-fashion-film-with-a-model-posing-in-different-outfits-34490-large.mp4" 
+              src="https://cdn.pixabay.com/video/2021/04/12/70876-537447781_large.mp4" 
               type="video/mp4" 
             />
           </video>
           <div className="absolute inset-0 bg-black/20"></div>
         </div>
         <div className="text-center z-10 px-4">
-          <h2 className="text-[10px] uppercase tracking-[0.6em] mb-4 text-white drop-shadow-md text-right" dir="rtl">مجموعة النخبة الشاملة 2026</h2>
+          <h2 className="text-[10px] uppercase tracking-[0.6em] mb-4 text-white drop-shadow-md">مجموعة النخبة الشاملة 2026</h2>
           <h1 className="text-6xl md:text-8xl font-serif italic mb-8 text-white drop-shadow-lg text-right" dir="rtl">جمالكِ يبدأ من هنا</h1>
           <button className="bg-white text-black px-14 py-4 text-[11px] uppercase tracking-[0.3em] hover:bg-black hover:text-white transition-all duration-500 border border-white">تسوقي الآن</button>
         </div>
       </header>
 
-      {/* أقسام الفئات - الملابس والإكسسوارات والسكين كير (كما هي تماماً) */}
+      {/* أقسام الفئات - الملابس والإكسسوارات والسكين كير كما هي بدون أي تغيير */}
       <section className="max-w-7xl mx-auto py-24 px-6 space-y-36">
         
         {/* قسم الملابس */}
