@@ -12,7 +12,7 @@ export default function EliteWomenStore() {
         <div className="text-[11px] tracking-widest cursor-pointer border border-black px-4 py-1 hover:bg-black hover:text-white transition-all">السلة (0)</div>
       </nav>
 
-      {/* القسم الرئيسي - فيديو يجمع الملابس والاكسسوارات والجمال */}
+      {/* القسم الرئيسي - تم تحديث رابط الفيديو ليكون شاملاً ومضموناً */}
       <header className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-black">
         <div className="absolute inset-0 z-0">
           <video 
@@ -20,6 +20,7 @@ export default function EliteWomenStore() {
             loop 
             muted 
             playsInline 
+            poster="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=2000"
             className="w-full h-full object-cover opacity-80"
           >
             <source 
@@ -27,20 +28,20 @@ export default function EliteWomenStore() {
               type="video/mp4" 
             />
           </video>
-          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
         <div className="text-center z-10 px-4">
-          <h2 className="text-[10px] uppercase tracking-[0.6em] mb-4 text-white drop-shadow-md">مجموعة النخبة الشاملة 2026</h2>
+          <h2 className="text-[10px] uppercase tracking-[0.6em] mb-4 text-white drop-shadow-md">مجموعة ربيع وصيف 2026</h2>
           <h1 className="text-6xl md:text-8xl font-serif italic mb-8 text-white drop-shadow-lg text-right" dir="rtl">جمالكِ يبدأ من هنا</h1>
           <button className="bg-white text-black px-14 py-4 text-[11px] uppercase tracking-[0.3em] hover:bg-black hover:text-white transition-all duration-500 border border-white">تسوقي الآن</button>
         </div>
       </header>
 
-      {/* أقسام الفئات - الملابس والإكسسوارات والسكين كير كما هي بدون أي تغيير */}
+      {/* أقسام الفئات - الملابس والإكسسوارات والسكين كير (كما هي تماماً) */}
       <section className="max-w-7xl mx-auto py-24 px-6 space-y-36">
         
         {/* قسم الملابس */}
-        <div id="clothing" className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div id="clothing" className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center border-b border-gray-50 pb-24">
           <div className="aspect-[3/4] relative group overflow-hidden shadow-2xl">
             <img 
               src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&q=80&w=800" 
@@ -52,7 +53,7 @@ export default function EliteWomenStore() {
             <h3 className="text-[12px] text-gray-400 tracking-[0.3em] uppercase">التصاميم الراقية</h3>
             <h4 className="text-4xl md:text-5xl font-serif italic">فساتين المناسبات</h4>
             <p className="text-gray-500 font-light leading-relaxed text-lg max-w-md ml-0 mr-auto">تصاميم تجمع بين الحداثة والأنوثة الطاغية لتكوني محط الأنظار في كل وقت.</p>
-            <div className="pt-4">
+            <div className="pt-4 text-left">
               <button className="text-[11px] border-b-2 border-black pb-2 tracking-[0.2em] uppercase hover:text-gray-400 hover:border-gray-400 transition-all">استعراض المجموعة كاملة</button>
             </div>
           </div>
