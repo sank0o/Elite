@@ -12,8 +12,8 @@ export default function EliteWomenStore() {
         <div className="text-[11px] tracking-widest cursor-pointer border border-black px-4 py-1 hover:bg-black hover:text-white transition-all">السلة (0)</div>
       </nav>
 
-      {/* القسم الرئيسي - تم استبدال الصورة بالفيديو هنا */}
-      <header className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+      {/* القسم الرئيسي - تم تحديث رابط الفيديو لضمان التشغيل */}
+      <header className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-black">
         <div className="absolute inset-0 z-0">
           <video 
             autoPlay 
@@ -23,7 +23,7 @@ export default function EliteWomenStore() {
             className="w-full h-full object-cover opacity-80"
           >
             <source 
-              src="https://assets.mixkit.co/videos/preview/mixkit-fashion-model-posing-in-a-white-outfit-34483-large.mp4" 
+              src="https://v.ft.com/videos/89495085-3b7c-407b-825a-939e80f9247c" 
               type="video/mp4" 
             />
           </video>
@@ -36,7 +36,7 @@ export default function EliteWomenStore() {
         </div>
       </header>
 
-      {/* أقسام الفئات - الملابس والإكسسوارات والسكين كير كما هي */}
+      {/* أقسام الفئات - الملابس والإكسسوارات والسكين كير كما هي بدون أي تغيير */}
       <section className="max-w-7xl mx-auto py-24 px-6 space-y-36">
         
         {/* قسم الملابس */}
