@@ -21,7 +21,7 @@ const client = createClient({
   useCdn: true,
 });
 
-const WHATSAPP_NUMBER = "9647700000000"; // رقمك لاستلام الطلبات
+const WHATSAPP_NUMBER = "9647738185679"; // رقمك لاستلام الطلبات
 
 const CURRENCY_CONFIG = [
   { code: 'IQD', label: 'د.ع', rate: 1 },
