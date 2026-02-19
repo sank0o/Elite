@@ -1,147 +1,154 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-export default function EliteWomenStore() {
+export default function LuxuryBoutique() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return <div className="bg-white min-h-screen" />;
+
   return (
-    <main className="min-h-screen bg-[#FFFFFF] text-[#111111] font-sans selection:bg-[#F4F1EA]">
+    <div className="min-h-screen bg-[#fff] text-[#000] selection:bg-[#e5e5e5]">
       
-      {/* 1. التنبيه العلوي (Announcement Bar) */}
-      <div className="bg-[#111111] text-white text-[9px] uppercase tracking-[0.3em] py-3 text-center">
-        توصيل مجاني للطلبات الفاخرة فوق 1000 ريال • اكتشفي مجموعة 2026
-      </div>
-
-      {/* 2. القائمة (Premium Navigation) */}
-      <nav className="flex justify-between items-center px-6 md:px-16 py-8 sticky top-0 z-50 bg-white/90 backdrop-blur-md">
-        <div className="flex gap-8 text-[10px] uppercase tracking-widest hidden lg:flex">
-          <a href="#new" className="hover:opacity-50 transition-opacity">الجديد</a>
-          <a href="#boutique" className="hover:opacity-50 transition-opacity">البوتيك</a>
-        </div>
-        
-        <div className="text-2xl tracking-[0.6em] font-light pl-4">ELITE</div>
-        
-        <div className="flex items-center gap-8 text-[10px] uppercase tracking-widest">
-          <button className="hover:opacity-50 transition-opacity">البحث</button>
-          <button className="relative border-b border-black pb-1">السلة (0)</button>
+      {/* 1. Header Navigation - Minimalist Style */}
+      <nav className="fixed w-full z-[100] bg-white/90 backdrop-blur-sm border-b border-neutral-100">
+        <div className="max-w-[1800px] mx-auto px-6 md:px-12 h-20 flex justify-between items-center">
+          <div className="flex-1 hidden md:flex gap-10 text-[10px] uppercase tracking-[0.3em] font-light">
+            <a href="#shop" className="hover:opacity-40 transition-all">Collections</a>
+            <a href="#heritage" className="hover:opacity-40 transition-all">Heritage</a>
+          </div>
+          
+          <div className="flex-1 text-center">
+            <h1 className="text-2xl md:text-3xl tracking-[0.7em] font-extralight uppercase">ELITE</h1>
+          </div>
+          
+          <div className="flex-1 flex justify-end gap-8 text-[10px] uppercase tracking-[0.3em] font-light">
+            <span className="cursor-pointer border-b border-black pb-0.5">Bag (0)</span>
+          </div>
         </div>
       </nav>
 
-      {/* 3. واجهة الفيديو السينمائية (Cinematic Reveal) */}
-      <header className="relative h-[90vh] mx-4 md:mx-6 overflow-hidden rounded-sm bg-[#1a1a1a]">
+      {/* 2. Hero Section - Full Screen Narrative */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-neutral-900">
         <div className="absolute inset-0 z-0">
           <video 
             autoPlay loop muted playsInline 
-            className="w-full h-full object-cover scale-100 transition-transform duration-[10s] hover:scale-110"
+            className="w-full h-full object-cover opacity-90 scale-100"
           >
             <source 
-              src="https://cdn.pixabay.com/video/2023/11/03/187652-880623253_large.mp4" 
+              src="https://cdn.pixabay.com/video/2020/05/25/40224-425026601_large.mp4" 
               type="video/mp4" 
             />
           </video>
-          <div className="absolute inset-0 bg-black/10"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
         </div>
 
-        <div className="absolute bottom-20 right-12 z-10 text-right text-white max-w-xl" dir="rtl">
-          <h2 className="text-[11px] uppercase tracking-[0.5em] mb-4 opacity-80">فصل جديد من الأناقة</h2>
-          <h1 className="text-5xl md:text-7xl font-light leading-[1.2] mb-8 font-serif">قصة تتجلى في <br/> كل تفصيل</h1>
-          <button className="bg-white text-black px-12 py-4 text-[10px] uppercase tracking-[0.2em] hover:bg-black hover:text-white transition-all duration-500">
-            اكتشفي المجموعة كاملة
+        <div className="relative z-10 text-center px-4 mt-20">
+          <p className="text-white text-[10px] uppercase tracking-[0.6em] mb-6 animate-fadeIn">Autumn / Winter 2026</p>
+          <h2 className="text-white text-5xl md:text-8xl font-serif italic mb-10 font-extralight tracking-tight" dir="rtl">فخامة التفاصيل</h2>
+          <button className="bg-white text-black px-16 py-5 text-[10px] uppercase tracking-[0.4em] hover:bg-black hover:text-white transition-all duration-[0.6s] shadow-2xl">
+            Discover the House
           </button>
         </div>
-      </header>
-
-      {/* 4. قسم "قصة العلامة" (Brand Story) */}
-      <section className="py-32 px-6 text-center max-w-3xl mx-auto">
-        <h3 className="text-[11px] uppercase tracking-[0.4em] text-gray-400 mb-6">فلسفتنا</h3>
-        <p className="text-2xl md:text-3xl font-serif italic text-[#1a1a1a] leading-relaxed" dir="rtl">
-          "نحن لا نصنع الملابس فحسب، بل نصمم الثقة. كل قطعة في إيليت هي وعد بالتميز، صُنعت لأجلكِ لتعكس جوهركِ الحقيقي."
-        </p>
       </section>
 
-      {/* 5. قسم المنتجات الشبكي (Curated Collection) */}
-      <section className="px-6 md:px-12 pb-32">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {/* 3. The Boutique Gallery - Inspired by Dior & Chanel */}
+      <section id="shop" className="py-32 px-6 md:px-12 bg-white">
+        <div className="max-w-[1600px] mx-auto">
           
-          {/* كرت المنتج 1 - الملابس */}
-          <div className="group relative h-[600px] overflow-hidden cursor-pointer">
-            <img 
-              src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=1000" 
-              className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-[1.5s] group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-500"></div>
-            <div className="absolute bottom-10 left-10 text-white">
-              <h4 className="text-2xl font-serif mb-2">الأزياء الراقية</h4>
-              <p className="text-[10px] uppercase tracking-widest opacity-80 border-b border-white inline-block pb-1">تسوقي الآن</p>
+          {/* Row 1: Clothing Showcase */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-center mb-40">
+            <div className="md:col-span-7 overflow-hidden bg-neutral-50 group">
+              <img 
+                src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?auto=format&fit=crop&q=80&w=1500" 
+                className="w-full aspect-[4/5] object-cover transition-transform duration-[2s] group-hover:scale-105"
+                alt="Apparel"
+              />
+            </div>
+            <div className="md:col-span-5 text-right space-y-8 pr-4" dir="rtl">
+              <span className="text-[11px] text-neutral-400 uppercase tracking-[0.4em]">المجموعة الجاهزة</span>
+              <h3 className="text-4xl md:text-6xl font-serif font-light leading-tight">الأناقة <br/> في بساطتها</h3>
+              <p className="text-neutral-500 font-light leading-relaxed text-lg max-w-md ml-0 mr-auto">
+                قطع صُممت لتدوم، تعبر عن قوة الأنوثة وتفرد الحضور بلمسات عصرية.
+              </p>
+              <button className="text-[10px] uppercase tracking-[0.3em] border-b border-neutral-300 pb-2 hover:border-black transition-all">مشاهدة المجموعة</button>
             </div>
           </div>
 
-          {/* كرت المنتج 2 - الإكسسوارات */}
-          <div className="group relative h-[600px] overflow-hidden cursor-pointer md:mt-12">
-            <img 
-              src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=1000" 
-              className="w-full h-full object-cover transition-all duration-[1.5s] group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-all duration-500"></div>
-            <div className="absolute bottom-10 left-10 text-white">
-              <h4 className="text-2xl font-serif mb-2">الإكسسوارات</h4>
-              <p className="text-[10px] uppercase tracking-widest opacity-80 border-b border-white inline-block pb-1">اكتشفي المزيد</p>
+          {/* Row 2: Accessories & Beauty - Split Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-24">
+            {/* Accessory 1 */}
+            <div className="space-y-10 group cursor-pointer">
+              <div className="aspect-square overflow-hidden bg-neutral-100 relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&q=80&w=1200" 
+                  className="w-full h-full object-cover grayscale-[100%] group-hover:grayscale-0 transition-all duration-[1s]"
+                  alt="Leather Goods"
+                />
+              </div>
+              <div className="text-center space-y-2">
+                <h4 className="text-xl font-serif italic">حقائب جلدية</h4>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-400">صناعة يدوية</p>
+              </div>
+            </div>
+
+            {/* Accessory 2 */}
+            <div className="space-y-10 group cursor-pointer md:mt-24">
+              <div className="aspect-square overflow-hidden bg-neutral-100 relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1596462502278-27bfad450216?auto=format&fit=crop&q=80&w=1200" 
+                  className="w-full h-full object-cover transition-all duration-[1s] group-hover:scale-105"
+                  alt="Beauty"
+                />
+              </div>
+              <div className="text-center space-y-2">
+                <h4 className="text-xl font-serif italic">مستحضرات التجميل</h4>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-400">الجمال المطلق</p>
+              </div>
             </div>
           </div>
-
-          {/* كرت المنتج 3 - العناية */}
-          <div className="group relative h-[600px] overflow-hidden cursor-pointer">
-            <img 
-              src="https://images.unsplash.com/photo-1556229167-da318a2803a3?auto=format&fit=crop&q=80&w=1000" 
-              className="w-full h-full object-cover transition-all duration-[1.5s] group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-500"></div>
-            <div className="absolute bottom-10 left-10 text-white">
-              <h4 className="text-2xl font-serif mb-2">العناية والجمال</h4>
-              <p className="text-[10px] uppercase tracking-widest opacity-80 border-b border-white inline-block pb-1">المجموعة الكاملة</p>
-            </div>
-          </div>
-
         </div>
       </section>
 
-      {/* 6. قسم العرض الفاخر (Full Width Showcase) */}
-      <section className="bg-[#F9F9F9] py-32 flex flex-col items-center justify-center px-6">
-        <div className="max-w-4xl text-center space-y-10">
-          <h2 className="text-[12px] uppercase tracking-[0.5em] text-[#c5a47e]">الحرفية اليدوية</h2>
-          <h3 className="text-4xl md:text-6xl font-serif leading-tight">اهتمام بالغ بأدق <br/> الخيوط والتفاصيل</h3>
-          <p className="text-gray-500 font-light leading-loose max-w-2xl mx-auto" dir="rtl">
-            نحن نؤمن أن الفخامة لا تكمن في المظهر فحسب، بل في الشعور الذي تمنحه القطعة لصاحبتها. نستخدم أرقى أنواع الحرير، وأجود الجلود، وأندر المكونات الطبيعية.
-          </p>
+      {/* 4. Luxury Experience - The "Elite" Statement */}
+      <section id="heritage" className="py-40 bg-[#0a0a0a] text-white">
+        <div className="max-w-4xl mx-auto px-6 text-center space-y-12">
+          <div className="w-[1px] h-20 bg-white/30 mx-auto mb-12" />
+          <h3 className="text-3xl md:text-5xl font-serif italic font-extralight leading-relaxed" dir="rtl">
+            "إيليت ليست مجرد اسم، بل هي تجربة تعيد تعريف مفهوم الرفاهية في عالمكِ الخاص."
+          </h3>
+          <p className="text-[10px] uppercase tracking-[0.8em] text-white/50 pt-8 italic">The Essence of Craftsmanship</p>
         </div>
       </section>
 
-      {/* 7. التذييل (Minimal Footer) */}
-      <footer className="py-24 px-6 md:px-16 border-t border-gray-100 flex flex-col md:flex-row justify-between items-start gap-12">
-        <div className="space-y-6">
-          <h5 className="text-xl tracking-[0.4em] font-light">ELITE</h5>
-          <p className="text-[10px] text-gray-400 max-w-xs leading-relaxed">
-            اشتركي في رسائلنا الإخبارية لتكوني أول من يعرف عن المجموعات الحصرية والفعاليات الخاصة.
-          </p>
+      {/* 5. Modern Footer */}
+      <footer className="py-32 px-6 md:px-12 bg-white border-t border-neutral-100">
+        <div className="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-20">
+          <div className="col-span-1 md:col-span-2">
+            <h5 className="text-2xl tracking-[0.5em] font-light mb-8">ELITE</h5>
+            <p className="text-neutral-400 text-xs leading-loose max-w-sm" dir="rtl">
+              انضمي إلى عالمنا لتلقي دعوات حصرية لعروض الأزياء، والوصول المبكر إلى مجموعاتنا المحدودة.
+            </p>
+          </div>
+          <div className="space-y-6 text-[10px] uppercase tracking-[0.3em]">
+            <p className="font-bold">Contact</p>
+            <p className="text-neutral-400">Help Center</p>
+            <p className="text-neutral-400">Boutique Finder</p>
+          </div>
+          <div className="space-y-6 text-[10px] uppercase tracking-[0.3em]">
+            <p className="font-bold">Social</p>
+            <p className="text-neutral-400 cursor-pointer hover:text-black transition-colors">Instagram</p>
+            <p className="text-neutral-400 cursor-pointer hover:text-black transition-colors">TikTok</p>
+          </div>
         </div>
-        
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-16 text-[10px] uppercase tracking-[0.2em]">
-          <div className="flex flex-col gap-4">
-            <p className="font-bold mb-2">الخدمات</p>
-            <a href="#">تواصل معنا</a>
-            <a href="#">الشحن والترجيع</a>
-          </div>
-          <div className="flex flex-col gap-4">
-            <p className="font-bold mb-2">القانونية</p>
-            <a href="#">الخصوصية</a>
-            <a href="#">الشروط</a>
-          </div>
-          <div className="flex flex-col gap-4">
-            <p className="font-bold mb-2">تابعونا</p>
-            <a href="#">Instagram</a>
-            <a href="#">Tiktok</a>
-          </div>
+        <div className="mt-32 pt-8 border-t border-neutral-50 text-center">
+          <p className="text-[9px] uppercase tracking-[0.4em] text-neutral-300">© 2026 ELITE HOUSE. All rights reserved.</p>
         </div>
       </footer>
-    </main>
+    </div>
   );
 }
