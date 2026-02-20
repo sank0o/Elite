@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Elite Studio | دودو الحلوا ',
-  description: 'أرقى فساتين السهرة والزفاف',
+  title: ' | دودو الحلوا ',
+  description: 'شنو من حلقوم انتِ',
 }
 
 export default function RootLayout({ children }) {
