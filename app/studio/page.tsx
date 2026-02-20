@@ -1,12 +1,12 @@
 'use client';
 
-import React from 'react'; // السطر الأهم لحل الخطأ الحالي
+import React from 'react'; // السطر الأهم لمنع الخطأ الحالي
 import { NextStudio } from 'next-sanity/studio';
 import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
 
 const config = defineConfig({
-  projectId: 'xtffcjyf', // رقم مشروعكِ
+  projectId: 'vff8rfuj', // رقم مشروعك
   dataset: 'production',
   title: 'Elite Studio',
   basePath: '/studio',
@@ -28,5 +28,5 @@ const config = defineConfig({
 });
 
 export default function StudioPage() {
-  return React.createElement(NextStudio, { config: config }); // طريقة كتابة تضمن عدم حدوث خطأ React
+  return React.createElement(NextStudio, { config: config }); // طريقة أكثر أماناً مع react
 }
