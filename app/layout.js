@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Elite Studio | متجر إيليت الفاخر',
+  title: 'Elite Studio | دودو الحلوا ',
   description: 'أرقى فساتين السهرة والزفاف',
 }
 
