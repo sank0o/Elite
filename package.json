@@ -1,10 +1,20 @@
 {
+  "name": "elite-store",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
   "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
+    "next": "14.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "next-sanity": "latest",
     "sanity": "latest",
-    "styled-components": "latest"
+    "lucide-react": "latest",
+    "styled-components": "^6.1.8"
   }
 }
