@@ -72,22 +72,32 @@
                 }
             };
 
-            // إضافة منتج جديد (الإصلاح هنا)
+            // إضافة منتج جديد - تم الإصلاح هنا لضمان قراءة الروابط بشكل صحيح
             const submitNewProduct = (e) => {
                 e.preventDefault();
                 const form = e.target;
+                
+                // جلب القيم مباشرة لضمان عدم ضياع رابط الصورة
+                const p_name = form.p_name.value;
+                const p_price = form.p_price.value;
+                const p_img = form.p_img.value;
+                const p_desc = form.p_desc.value;
+                const p_sizes = form.p_sizes.value;
+                const p_colors = form.p_colors.value;
+
                 const newProduct = {
                     id: Date.now(),
-                    name: form.p_name.value,
-                    price: form.p_price.value,
-                    img: form.p_img.value,
+                    name: p_name,
+                    price: p_price,
+                    img: p_img, // الرابط هنا سيتم تمريره فوراً
                     category: 'نخبة',
-                    desc: form.p_desc.value,
-                    sizes: form.p_sizes.value.split(',').map(s => s.trim()),
-                    colors: form.p_colors.value.split(',').map(c => c.trim())
+                    desc: p_desc,
+                    sizes: p_sizes.split(',').map(s => s.trim()),
+                    colors: p_colors.split(',').map(c => c.trim())
                 };
 
-                setProducts([...products, newProduct]);
+                // تحديث مصفوفة المنتجات
+                setProducts(prevProducts => [newProduct, ...prevProducts]);
                 setShowAddModal(false);
                 alert('تمت إضافة المنتج بنجاح!');
             };
@@ -122,7 +132,7 @@
                         </div>
                     </nav>
 
-                    {/* Modal: إضافة منتج (تم الإصلاح والتوسيع) */}
+                    {/* Modal: إضافة منتج */}
                     {showAddModal && (
                         <div className="fixed inset-0 z-[200] modal-bg flex items-center justify-center p-4">
                             <div className="bg-white p-8 rounded-[2.5rem] w-full max-w-lg shadow-2xl overflow-y-auto max-h-[90vh]">
@@ -185,7 +195,14 @@
                                             </button>
                                         )}
                                         <div className="aspect-[4/5] overflow-hidden rounded-[3rem] bg-gray-100 mb-6">
-                                            <img src={p.img} className="product-image w-full h-full object-cover" onError={(e) => e.target.src='https://via.placeholder.com/800x1000?text=Image+Error'} />
+                                            <img 
+                                                src={p.img} 
+                                                className="product-image w-full h-full object-cover" 
+                                                onError={(e) => {
+                                                    e.target.onerror = null; 
+                                                    e.target.src='https://via.placeholder.com/800x1000?text=Image+Error';
+                                                }} 
+                                            />
                                         </div>
                                         <div className="px-4 flex justify-between items-start font-bold">
                                             <div>
@@ -272,3 +289,4 @@
     </script>
 </body>
 </html>
+                    
