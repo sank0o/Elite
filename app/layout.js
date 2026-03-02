@@ -1,6 +1,6 @@
 export const metadata = {
-  title: ' | دودو الحلوا ',
-  description: 'شنو من حلقوم انتِ',
+  title: ' | Elite ',
+  description: 'store',
 }
 
 export default function RootLayout({ children }) {
